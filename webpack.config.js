@@ -8,7 +8,7 @@ module.exports = (env) => {
     return {
         entry: './src/app.js',
         output: {
-            path: path.join(__dirname, 'public'),
+            path: path.join(__dirname, 'public', 'dist'),
             filename: 'bundle.js'
         },
         module: {
@@ -45,7 +45,8 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map' : 'inline-source-map', //'cheap-module-eval-source-map', // to see the sourcemap where the error has been made
         devServer: {
             contentBase: path.join(__dirname, 'public'),
-            historyApiFallback: true // tell the devServer to always serve up the index.html file for all unknown 404s
+            historyApiFallback: true, // tell the devServer to always serve up the index.html file for all unknown 404s
+            publicPath: '/dist/'
         }
     };
 };
