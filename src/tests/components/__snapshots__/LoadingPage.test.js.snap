@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should correctly render LoadingPage 1`] = `
+<div
+  className="vhc vhq"
+>
+  <div
+    className="vld"
+  />
+  <div
+    className="vhb"
+  >
+    <img
+      alt="Variant HTML Page Builder"
+      src="/images/full-logo.png"
+    />
+  </div>
+  <div
+    className="vha"
+  >
+    <a
+      href="http://www.mediumra.re/"
+      target="_blank"
+    >
+      <img
+        alt="Variant HTML Page Builder"
+        className="vlb"
+        src="/images/mrare.png"
+      />
+    </a>
+    <span>
+      © Copyright 2017 Medium Rare
+      <br />
+      All Rights Reserved
+    </span>
+  </div>
+  <div
+    className="vjg"
+  />
+</div>
+`;

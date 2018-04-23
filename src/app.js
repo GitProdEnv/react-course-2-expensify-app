@@ -9,6 +9,7 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss'; // since we defined test: /\.css$/ in webpack.config.js this works
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 
 const store = configureStore();
@@ -30,25 +31,7 @@ const jsx = (
         <AppRouter/>
     </Provider>
 );
-ReactDOM.render((
-    <div className="vhc vhq">
-
-        <div className="vld">
-
-        </div>
-
-        <div className="vhb">
-            <img alt="Variant HTML Page Builder" src="/images/full-logo.png" />
-        </div>
-
-        <div className="vha">
-            <a target="_blank" href="http://www.mediumra.re/"><img className="vlb" alt="Variant HTML Page Builder" src="/images/mrare.png" /></a>
-            <span>&copy; Copyright 2017 Medium Rare<br />All Rights Reserved</span>
-        </div>
-
-        <div className="vjg"></div>
-    </div>
-), document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 store.dispatch(startSetExpenses()).then(() => {
     ReactDOM.render(jsx, document.getElementById('app'));
