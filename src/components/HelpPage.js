@@ -1,8 +1,15 @@
 import React from 'react';
+import MainFillContainer from "./MainFillContainer";
+import LeftEditSidebar from "./LeftEditSidebar";
+import PageNavigation from "./PageNavigation";
 
 const HelpPage = () => (
     <div>
-        This is from my help component
+        <LeftEditSidebar />
+        <PageNavigation/>
+        <div className="main-content">
+            <MainFillContainer />
+        </div>
     </div>
 );
 

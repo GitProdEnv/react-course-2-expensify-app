@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expenses';
+import { startSetExpenses } from './actions/expenses';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss'; // since we defined test: /\.css$/ in webpack.config.js this works
+import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
+
 
 const store = configureStore();
 
@@ -27,5 +30,27 @@ const jsx = (
         <AppRouter/>
     </Provider>
 );
+ReactDOM.render((
+    <div className="vhc vhq">
 
-ReactDOM.render(jsx, document.getElementById('app'));
+        <div className="vld">
+
+        </div>
+
+        <div className="vhb">
+            <img alt="Variant HTML Page Builder" src="/images/full-logo.png" />
+        </div>
+
+        <div className="vha">
+            <a target="_blank" href="http://www.mediumra.re/"><img className="vlb" alt="Variant HTML Page Builder" src="/images/mrare.png" /></a>
+            <span>&copy; Copyright 2017 Medium Rare<br />All Rights Reserved</span>
+        </div>
+
+        <div className="vjg"></div>
+    </div>
+), document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(jsx, document.getElementById('app'));
+});
+

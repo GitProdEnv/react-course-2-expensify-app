@@ -1,0 +1,55 @@
+div {
+  padding:0;
+  margin:0;
+}
+
+div.my-gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+div.my-gallery::after {
+  content: '';
+  flex-grow: 999999999;
+}
+div.my-gallery .flexdisp {
+  background-color: inherit;
+  position: relative;
+  margin: 0 0 0 2%;
+}
+div.my-gallery i{
+  display: block;
+}
+div.my-gallery img.galleryImg {
+  position: absolute;
+  top: 0;
+  width: 99%;
+  vertical-align: bottom;
+}
+
+.my-gallery figcaption {
+  display: none;
+}
+
+
+/* < 550px */
+/* align all images as display block - only 1 image per row */
+@media screen and (max-width:550px) {
+  .my-gallery {
+    display:block !important;
+    width: 100%;
+  }
+  div.my-gallery .flexdisp {
+    width: 100% !important;
+    background-color: white;
+    position: relative;
+    margin: 0px 0 0px 0;
+  }
+
+  .div.my-gallery img.galleryImg {
+    position: static;
+  }
+}
+
+.fade.in {
+  opacity: 1
+}
